@@ -15,7 +15,7 @@ import {ExplainerInputs, KineticTypographyInputs, LogoInputs, PromptFormat, Stor
 import {trackEvent} from './utils/analytics';
 import {saveToHistory} from './utils/history';
 
-const ai = new OpenAI({apiKey: import.meta.env.VITE_OPENAI_API_KEY});
+const ai = new OpenAI({apiKey: import.meta.env.VITE_OPENAI_API_KEY, dangerouslyAllowBrowser: true});
 
 const NO_TEXT_INSTRUCTION = `
 **CRITICAL NO-TEXT RULE:** The user has explicitly disabled text generation. You MUST NOT include any descriptions of on-screen text, text overlays, typography, letters, words, captions, or fonts in your JSON output. All concepts must be represented purely visually. For example, instead of a sign that reads "OPEN", describe a door swinging open with light pouring out. Instead of a title card, create a symbolic visual. This is a strict, non-negotiable instruction. Any violation will result in a failed output.`;
